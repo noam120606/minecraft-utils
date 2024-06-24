@@ -110,6 +110,8 @@ class Bot extends Client {
                 if (!cmd.data.integration_types) cmd.data.integration_types = [IntegrationTypes.USER_INSTALL, IntegrationTypes.GUILD_INSTALL];
                 if (!cmd.data.contexts) cmd.data.contexts = [InteractionContexts.GUILD, InteractionContexts.PRIVATE_CHANNEL, InteractionContexts.BOT_DM];
 
+                // loading localizations
+                // all languages here : https://discord.com/developers/docs/reference#locales
                 cmd.data.name_localizations = {};
                 cmd.data.description_localizations = {};
                 for (const locale of this.locales.values()) {
