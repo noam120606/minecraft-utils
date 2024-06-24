@@ -1,0 +1,82 @@
+{
+    "languages": ["fr"],
+    "commands": {
+        "status": {
+            "name": "statut",
+            "description": "Obtient le statut d'un serveur Minecraft",
+            "options": {
+                "ip": {
+                    "name": "ip",
+                    "description": "L'adresse IP du serveur Minecraft"
+                }
+            }
+        },
+        "ping": {
+            "name": "ping",
+            "description": "Obtient le ping du bot !"
+        },
+        "account": {
+            "name": "compte",
+            "description": "Obtient les informations de votre compte Minecraft"
+        },
+        "login": {
+            "name": "connexion",
+            "description": "Associe votre compte Minecraft à votre compte Discord !"
+        }
+    },
+    "messages": {
+        "misc": {
+            "no_perm_interaction": "Cette interaction demande la permission `{{perm}}` !"
+        },
+        "webserver": {
+            "login": {
+                "title": "Votre compte à bien été lié avec succès !",
+                "logout": "Se deconnecter"
+            },
+            "logout": {
+                "title": "Vos informations ont bien été supprimmées de votre session"
+            }
+        },
+        "ping": {
+            "main_reply": "Le ping du bot est `{{ping}}`ms"
+        },
+        "status": {
+            "embed": {
+                "title": "Statut du serveur {{ip}}",
+                "description": {
+                    "ip": "**Adresse IP :** `{{connect}}`",
+                    "players": "**Joueurs en ligne :** `{{players}}`",
+                    "types": {
+                        "bedrock": "**Type de serveur :** `Bedrock`",
+                        "java": "**Type de serveur :** `Java`"
+                    },
+                    "version": "**Version :** `{{version}}`",
+                    "offline": "Serveur Hors Ligne"
+                }
+            },
+            "buttons": {
+                "playerlist": {
+                    "label": "Liste des joueurs",
+                    "no_list": "La liste des joueurs n'a pas été trouvé pour ce serveur !"
+                }
+            }
+        },
+        "account": {
+            "no_account": "Vous n'avez pas de compte Minecraft lié ! Utilisez /connexion",
+            "embed": {
+                "title": "Informations de votre compte",
+                "description": {
+                    "username": "**Nom d'utilisateur :** `{{username}}`",
+                    "uuid": "**UUID :** `{{uuid}}`",
+                    "created": "**Date de création :** `{{created}}`"
+                }
+            }
+        },
+        "login": {
+            "already_linked": "Vous avez deja un compte Minecraft !\nPour le supprimer cliquez sur le bouton ci-dessous",
+            "already_linked_btnlabel": "Déconnexion",
+            "login": "Associez votre compte Minecraft à votre compte Discord en cliquant sur le bouton ci-dessous",
+            "login_btnlabel": "Connexion"
+        }
+    }
+}
