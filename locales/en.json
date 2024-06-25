@@ -17,7 +17,17 @@
         },
         "account": {
             "name": "account",
-            "description": "Gets your Minecraft account information"
+            "description": "Gets your Minecraft account information",
+            "options": {
+                "uuid": {
+                    "name": "uuid",
+                    "description": "The UUID of the Minecraft account"
+                },
+                "username": {
+                    "name": "username",
+                    "description": "The username of the Minecraft account"
+                }
+            }
         },
         "login": {
             "name": "login",

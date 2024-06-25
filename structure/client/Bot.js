@@ -5,8 +5,9 @@ const config = require('../../config.js');
 
 const Database = require('../utils/Database.js');
 const WebhookManager = require('./Webhooks.js');
-const ServersManager = require('../minecraft/ServersManager.js');
 const WebServer = require('../webserver/app.js');
+const ServersManager = require('../minecraft/ServersManager.js');
+const PlayersManager = require('../minecraft/PlayersManager.js');
 
 class Bot extends Client {
     constructor(opt = {}) {
@@ -20,6 +21,7 @@ class Bot extends Client {
          *  disable_interactions: false,
          *  disable_servers: false,
          *  disable_webserver: false,
+         *  disable_players: false,
          *  port: 3000,
          *  session_secret: 'secret',
          *  id: '',
@@ -50,6 +52,7 @@ class Bot extends Client {
         if (!opt.disable_db) this.db = new Database(this);
         if (!opt.disable_webhooks) this.webhooks = new WebhookManager(this);
         if (!opt.disable_webserver) this.webserver = new WebServer(this, opt);
+        if (!opt.disable_players) this.players = new PlayersManager(this);
         
 
         this.on(Events.ClientReady, async () => {
