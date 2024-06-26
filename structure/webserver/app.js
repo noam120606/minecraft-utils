@@ -13,7 +13,7 @@ class App {
     }
 
     loadMiddlewares() {
-        this.app.use(express.static('public'));
+        this.app.use(express.static(__dirname + '/../../public'));
         this.app.use(session({
             secret: this.session_secret,
             resave: false,

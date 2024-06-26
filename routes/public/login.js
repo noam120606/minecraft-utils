@@ -1,3 +1,5 @@
+const { readFileSync } = require('fs');
+
 class Route {
     constructor(bot) {
         this.bot = bot;
@@ -19,7 +21,8 @@ class Route {
 
         await this.bot.db.setLinkedAccouts(req.session.dsc_data.id, req.session.mc_data.id);
 
-        res.send(`${messages.title}<br><br><a href="/logout">${messages.logout}</a>`);
+        let content = readFileSync('./public/login.html', 'utf8');
+        res.send(content.replace('{{text}}', messages.title).replace('{{logout}}', messages.logout));
         
     }
 }
