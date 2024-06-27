@@ -1,6 +1,6 @@
 const { EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require("discord.js");
 const BaseCommand = require("../../structure/components/BaseCommand");
-const { SlashCommandOptionsType, InteractionContexts, IntegrationTypes } = require("../../structure/utils/Types");
+const { SlashCommandOptionsType } = require("../../structure/utils/Types");
 
 const commandOpt = {
     name: "status",

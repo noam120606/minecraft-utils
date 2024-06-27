@@ -104,6 +104,14 @@
                     "uuid": "UUID"
                 }
             }
+        },
+        "friend": {
+            "requests": {
+                "message": "➕ {{user}} t'as demandé en ami !",
+                "accept": "Accepter",
+                "deny": "Refuser",
+                "block": "Bloquer"
+            }
         }
     }
 }
