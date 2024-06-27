@@ -1,4 +1,5 @@
 const Player = require("./Player");
+const MinecraftRequest = require("../../functions/MinecraftRequest");
 
 class PlayersManager {
     constructor(bot) {

@@ -88,5 +88,22 @@
             "login": "Associez votre compte Minecraft à votre compte Discord en cliquant sur le bouton ci-dessous",
             "login_btnlabel": "Connexion"
         }
+    },
+    "components": {
+        "player": {
+            "buttons": {
+                "ask_friend": "Ajouter en ami"
+            },
+            "embed": {
+                "title": "Liste des joueurs",
+                "description": {
+                    "no_list": "La liste des joueurs n'a pas été pour ce serveur !"
+                },
+                "fields": {
+                    "username": "Nom d'utilisateur",
+                    "uuid": "UUID"
+                }
+            }
+        }
     }
 }

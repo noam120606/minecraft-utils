@@ -6,7 +6,6 @@ class Event extends BaseEvent {
     constructor(bot) { super(bot, Events.ClientReady) };
     
     async run() {
-
         await DiscordRequest(`applications/${this.bot.user.id}/commands`, { 
             method: 'PUT',
             body: this.bot.commands.map(cmd => cmd.data) 

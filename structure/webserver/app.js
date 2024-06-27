@@ -1,6 +1,7 @@
 const express = require('express');
 const session = require('express-session'); 
 const { readdirSync } = require('fs');
+const { Collection } = require('discord.js')
 
 class App {
     constructor(bot, opt) {
@@ -10,6 +11,7 @@ class App {
         this.session_secret = opt.session_secret || 'secret';
         this.app = express();
         this.routes = [];
+        this.logout_tokens = new Collection();
     }
 
     loadMiddlewares() {

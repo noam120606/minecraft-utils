@@ -28,18 +28,17 @@ class Player {
             .setAuthor({ name: this.username, iconURL: this.skin_head })
             .setThumbnail(this.skin_bust)
             .addFields([
-                { name: 'Username', value: this.username, inline: true },
-                { name: 'UUID', value: `\`${this.uuid}\``, inline: true },
+                { name: locales.embed.fields.username, value: this.username, inline: true },
+                { name: locales.embed.fields.uuid, value: `\`${this.uuid}\``, inline: true },
                 
             ])
             .setColor(0x00FF00)
-            //.setImage(mc_skin_all);
     }
     toComponents(locales, self=false) {
         return new ActionRowBuilder()
             .addComponents(
                 new ButtonBuilder()
-                    .setLabel('Ask friend')
+                    .setLabel(locales.buttons.ask_friend)
                     .setEmoji('🤍')
                     .setStyle(ButtonStyle.Primary)
                     .setDisabled(self)

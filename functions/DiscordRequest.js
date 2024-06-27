@@ -13,7 +13,7 @@ module.exports = async (endpoint, options, bot=undefined) => {
 
     if (!res.ok) {
         const data = await res.json();
-        log('error', JSON.stringify(data));
+        bot.log('error', JSON.stringify(data));
     }
 
     if (bot) bot.log('info', `Request completed ${endpoint}`);

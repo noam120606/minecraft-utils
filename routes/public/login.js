@@ -1,3 +1,4 @@
+const generateId = require('../../functions/generateId');
 const { readFileSync } = require('fs');
 
 class Route {
@@ -21,8 +22,11 @@ class Route {
 
         await this.bot.db.setLinkedAccouts(req.session.dsc_data.id, req.session.mc_data.id);
 
+        const logout_id = generateId(20);
+        this.bot.webserver.logout_tokens.set(req.session.dsc_data.id, logout_id);
+
         let content = readFileSync('./public/login.html', 'utf8');
-        res.send(content.replace('{{text}}', messages.title).replace('{{logout}}', messages.logout));
+        res.send(content.replace('{{content}}', `<h1>${messages.title}</h1><br/><a href="/logout?id=${req.session.dsc_data.id}&token=${logout_id}">${messages.logout}</a>`));
         
     }
 }

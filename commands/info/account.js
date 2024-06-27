@@ -22,9 +22,18 @@ class Command extends BaseCommand {
 
         const locales = interaction.locales.user.messages.account;
 
-        const player = await this.bot.players.getById(interaction.user.id)
+        const username = interaction.options.getString("username");
+        const uuid = interaction.options.getString("uuid");
+
+        let player = null;
+        if (username) player = await this.bot.players.getByUsername(username);
+        else if (uuid) player = await this.bot.players.getByUuid(uuid);
+        else player = await this.bot.players.getById(interaction.user.id)
+
         if (!player) return interaction.reply({ content: locales.no_account, ephemeral: true });
-        const msg = await player.toMessage(interaction.locales.user.components?.player);
+
+        
+        const msg = await player.toMessage(interaction.locales.user.components.player);
 
         console.log(player.getData());
 
